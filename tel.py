@@ -1,13 +1,23 @@
+"""
+This script is used to download all messages from a telegram chat.
+
+Clone the repository https://github.com/teagurilla/telethon_chat_data.git
+and run the script 
+"""
+
+
 from telethon.sync import TelegramClient
 from telethon.tl.functions.messages import GetDialogsRequest
 import yaml
 import os
 import dotenv
 
+
 dotenv.load_dotenv()
+
+
 api_id = int(os.environ['api_id'])
 api_hash = os.environ['api_hash']
-
 username = os.environ['telegram_username']
 
 with TelegramClient(username, api_id, api_hash) as client:
